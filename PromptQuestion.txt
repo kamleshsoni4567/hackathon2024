@@ -1,0 +1,3 @@
+
+provide json answer for data attribute lineage in terms of input and output attribute in this SQL transformation
+select country, sum(balance) from Loan where age > 19 group by country
