@@ -1,0 +1,35 @@
+{
+  "inputAttributes": [
+    {
+      "name": "age",
+      "type": "integer",
+      "description": "Age of loan applicants"
+    },
+    {
+      "name": "balance",
+      "type": "decimal",
+      "description": "Loan balance"
+    },
+    {
+      "name": "country",
+      "type": "string",
+      "description": "Country of loan applicants"
+    }
+  ],
+  "outputAttributes": [
+    {
+      "name": "country",
+      "type": "string",
+      "description": "Country grouped by in the output"
+    },
+    {
+      "name": "sum(balance)",
+      "type": "decimal",
+      "description": "Sum of balance for loans grouped by country"
+    }
+  ],
+  "transformation": {
+    "sql": "SELECT country, SUM(balance) FROM Loan WHERE age > 19 GROUP BY country",
+    "description": "SQL transformation to compute sum of balances for loans grouped by country where age of loan applicants is greater than 19"
+  }
+}
